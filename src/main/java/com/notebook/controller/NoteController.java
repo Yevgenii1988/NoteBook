@@ -1,7 +1,6 @@
 package com.notebook.controller;
 
-import com.notebook.domain.Note;
-import com.notebook.repository.NotesRepository;
+import com.notebook.service.NotesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class NoteController {
 
     @Autowired
-    private NotesRepository notesRepository;
+    private NotesService notesService;
 
     @RequestMapping("/notes")
     public String notes(Model model) {
-        model.addAttribute("notes", notesRepository.getAllNotes());
+        model.addAttribute("notes", notesService.getAllNotes());
         return "notes";
     }
 }
