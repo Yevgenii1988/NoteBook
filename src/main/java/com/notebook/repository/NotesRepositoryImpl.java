@@ -25,6 +25,15 @@ public class NotesRepositoryImpl implements NotesRepository {
         return notes;
     }
 
+    @Override
+    public List<Note> getNotesByCategory(String category) {
+        String sql = "SELECT * FROM NOTES WHERE CATEGORY = :category";
+        Map<String, Object> params = new HashMap<>();
+        params.put("category", category);
+
+        return jdbcTemplate.query(sql, params, new NoteMapper());
+    }
+
     private static final class NoteMapper implements RowMapper {
 
         @Override

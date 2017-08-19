@@ -23,7 +23,7 @@
                     <div class="thumbnail">
                         <div class="caption">
                             <h3>${note.title}</h3>
-                            <p>${note.category}</p>
+                            <p><a href="<c:url value="/notes/${note.category}"/>">${note.category}</a></p>
                             <p>${note.body}</p>
                         </div>
                     </div>

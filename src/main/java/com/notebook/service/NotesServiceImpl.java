@@ -17,4 +17,9 @@ public class NotesServiceImpl implements NotesService {
     public List<Note> getAllNotes() {
         return notesRepository.getAllNotes();
     }
+
+    @Override
+    public List<Note> getNotesByCategory(String category) {
+        return notesRepository.getNotesByCategory(category);
+    }
 }

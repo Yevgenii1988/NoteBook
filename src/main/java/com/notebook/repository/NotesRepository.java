@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface NotesRepository {
     List<Note> getAllNotes();
+    List<Note> getNotesByCategory(String category);
 }

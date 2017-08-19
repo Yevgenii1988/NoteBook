@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface NotesService {
     List<Note> getAllNotes();
+    List<Note> getNotesByCategory(String category);
 }
