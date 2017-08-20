@@ -42,6 +42,16 @@ public class NotesRepositoryImpl implements NotesRepository {
         return jdbcTemplate.queryForObject(sql, params, new NoteMapper());
     }
 
+    @Override
+    public void addNote(Note note) {
+        String sql = "INSERT INTO NOTES (TITLE, CATEGORY, BODY) VALUES (:title, :category, :body)";
+        Map<String, Object> params = new HashMap<>();
+        params.put("title", note.getTitle());
+        params.put("category", note.getCategory());
+        params.put("body", note.getBody());
+        jdbcTemplate.update(sql, params);
+    }
+
     private static final class NoteMapper implements RowMapper<Note> {
 
         @Override

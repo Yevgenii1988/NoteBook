@@ -1,12 +1,11 @@
 package com.notebook.controller;
 
+import com.notebook.domain.Note;
 import com.notebook.service.NotesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class NoteController {
@@ -30,5 +29,18 @@ public class NoteController {
     public String getNoteById(@RequestParam("id") int noteId, Model model) {
         model.addAttribute("note", notesService.getNoteById(noteId));
         return "viewNote";
+    }
+
+    @RequestMapping(value = "/notes/add", method = RequestMethod.GET)
+    public String getNewNoteForm(Model model) {
+        Note newNote = new Note();
+        model.addAttribute("newNote", newNote);
+        return "addNote";
+    }
+
+    @RequestMapping(value = "/notes/add", method = RequestMethod.POST)
+    public String addNewNote(@ModelAttribute("newNote") Note newNote) {
+        notesService.addNote(newNote);
+        return "redirect:/notes";
     }
 }
