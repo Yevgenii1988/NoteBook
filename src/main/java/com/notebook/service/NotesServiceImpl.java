@@ -22,4 +22,9 @@ public class NotesServiceImpl implements NotesService {
     public List<Note> getNotesByCategory(String category) {
         return notesRepository.getNotesByCategory(category);
     }
+
+    @Override
+    public Note getNoteById(int noteId) {
+        return notesRepository.getNoteById(noteId);
+    }
 }

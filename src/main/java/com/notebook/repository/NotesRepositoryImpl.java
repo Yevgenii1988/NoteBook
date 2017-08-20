@@ -34,10 +34,18 @@ public class NotesRepositoryImpl implements NotesRepository {
         return jdbcTemplate.query(sql, params, new NoteMapper());
     }
 
-    private static final class NoteMapper implements RowMapper {
+    @Override
+    public Note getNoteById(int noteId) {
+        String sql = "SELECT * FROM NOTES WHERE ID = :id";
+        Map<String, Object> params = new HashMap<>();
+        params.put("id", noteId);
+        return jdbcTemplate.queryForObject(sql, params, new NoteMapper());
+    }
+
+    private static final class NoteMapper implements RowMapper<Note> {
 
         @Override
-        public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public Note mapRow(ResultSet rs, int rowNum) throws SQLException {
             Note note = new Note();
             note.setNoteId(rs.getInt("ID"));
             note.setTitle(rs.getString("TITLE"));

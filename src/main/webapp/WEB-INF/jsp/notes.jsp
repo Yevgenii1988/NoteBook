@@ -25,6 +25,11 @@
                             <h3>${note.title}</h3>
                             <p><a href="<c:url value="/notes/${note.category}"/>">${note.category}</a></p>
                             <p>${note.body}</p>
+                            <p>
+                                <a href="<c:url value="/viewNote?id=${note.noteId}"/> " class="btn btn-primary">
+                                    <span class="glyphicon-info-sign glyphicon"></span> Details
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
