@@ -1,22 +1,7 @@
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<html>
-<head>
-    <link rel="stylesheet"
-          href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <title>Notes</title>
-</head>
-<body>
-    <section>
-        <div class="jumbotron">
-            <div class="container">
-                <p>Add new note</p>
-            </div>
-        </div>
-    </section>
     <section class="container">
         <form:form method="post" modelAttribute="newNote" class="form-horizontal">
             <fieldset>
@@ -57,5 +42,3 @@
             </fieldset>
         </form:form>
     </section>
-</body>
-</html>
