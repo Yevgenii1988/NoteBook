@@ -9,4 +9,6 @@ public interface NotesRepository {
     List<Note> getNotesByCategory(String category);
     Note getNoteById(int noteId);
     void addNote(Note note);
+    void updateNote(Note note);
+    void deleteNote(Note note);
 }

@@ -43,4 +43,23 @@ public class NoteController {
         notesService.addNote(newNote);
         return "redirect:/notes";
     }
+
+    @RequestMapping(value = "/notes/editNote", method = RequestMethod.GET)
+    public String getEditNoteForm(@RequestParam("id") int noteId, Model model) {
+        model.addAttribute("noteToBeUpdated", notesService.getNoteById(noteId));
+        return "editForm";
+    }
+
+    @RequestMapping(value = "/notes/updateNote", method = RequestMethod.POST)
+    public String editNote(@ModelAttribute("noteToBeUpdated") Note noteToBeUpdated) {
+        notesService.updateNote(noteToBeUpdated);
+        return "redirect:/notes";
+    }
+
+    @RequestMapping("delete")
+    public String delete(@RequestParam("id") int noteId, Model model) {
+        Note noteToDelete = notesService.getNoteById(noteId);
+        notesService.deleteNote(noteToDelete);
+        return "redirect:/notes";
+    }
 }

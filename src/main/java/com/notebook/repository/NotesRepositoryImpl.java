@@ -52,6 +52,25 @@ public class NotesRepositoryImpl implements NotesRepository {
         jdbcTemplate.update(sql, params);
     }
 
+    @Override
+    public void updateNote(Note note) {
+        String sql = "UPDATE NOTES SET TITLE = :title, CATEGORY = :category, BODY = :body WHERE ID = :id";
+        Map<String, Object> params = new HashMap<>();
+        params.put("title", note.getTitle());
+        params.put("category", note.getCategory());
+        params.put("body", note.getBody());
+        params.put("id", note.getNoteId());
+        jdbcTemplate.update(sql, params);
+    }
+
+    @Override
+    public void deleteNote(Note note) {
+        String sql = "DELETE FROM NOTES WHERE ID = :id";
+        Map<String, Object> params = new HashMap<>();
+        params.put("id", note.getNoteId());
+        jdbcTemplate.update(sql, params);
+    }
+
     private static final class NoteMapper implements RowMapper<Note> {
 
         @Override

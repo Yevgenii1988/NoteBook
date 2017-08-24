@@ -32,4 +32,14 @@ public class NotesServiceImpl implements NotesService {
     public void addNote(Note note) {
         notesRepository.addNote(note);
     }
+
+    @Override
+    public void updateNote(Note note) {
+        notesRepository.updateNote(note);
+    }
+
+    @Override
+    public void deleteNote(Note note) {
+        notesRepository.deleteNote(note);
+    }
 }

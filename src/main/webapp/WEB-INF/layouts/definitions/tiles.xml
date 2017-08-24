@@ -28,4 +28,10 @@
         <put-attribute name="tagline" value="Adding new note"/>
         <put-attribute name="content" value="/WEB-INF/jsp/addNote.jsp"/>
     </definition>
+    <definition name="editForm" extends="baseLayout">
+        <put-attribute name="title" value="Notes"/>
+        <put-attribute name="heading" value="NoteBook"/>
+        <put-attribute name="tagline" value="Editing the note"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/editForm.jsp"/>
+    </definition>
 </tiles-definitions>
