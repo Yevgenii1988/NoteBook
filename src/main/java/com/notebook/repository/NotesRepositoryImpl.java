@@ -53,13 +53,13 @@ public class NotesRepositoryImpl implements NotesRepository {
     }
 
     @Override
-    public void updateNote(Note note) {
+    public void updateNote(int noteId, Note note) {
         String sql = "UPDATE NOTES SET TITLE = :title, CATEGORY = :category, BODY = :body WHERE ID = :id";
         Map<String, Object> params = new HashMap<>();
         params.put("title", note.getTitle());
         params.put("category", note.getCategory());
         params.put("body", note.getBody());
-        params.put("id", note.getNoteId());
+        params.put("id", noteId);
         jdbcTemplate.update(sql, params);
     }
 

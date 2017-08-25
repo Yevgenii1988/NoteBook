@@ -10,7 +10,7 @@
                 <label class="control-label col-lg-2 col-lg-2"
                        for="title">Title</label>
                 <div class="col-lg-10">
-                    <form:input id="title" value="${noteToBeUpdated.title}" path="title"
+                    <form:input id="title" path="title" value="${noteToBeUpdated.title}"
                                 type="text" class="form:input-large"/>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 <label class="control-label col-lg-2 col-lg-2"
                        for="category">Category</label>
                 <div class="col-lg-10">
-                    <form:input id="category" value="${noteToBeUpdated.category}" path="category"
+                    <form:input id="category" path="category" value="${noteToBeUpdated.category}"
                                 type="text" class="form:input-large"/>
                 </div>
             </div>
@@ -28,14 +28,13 @@
                 <label class="control-label col-lg-2"
                        for="body">Contents</label>
                 <div class="col-lg-10">
-                    <form:textarea id="body" value="${noteToBeUpdated.body}"
-                                   path="body" rows = "5"/>
+                    <form:textarea id="body" path="body" value="${noteToBeUpdated.body}" rows = "5"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
-                    <input type="submit" id="btnSave" class="btn btn-primary" value ="Save" formaction="<c:url value="/notes/updateNote"/> "/>
+                    <input type="submit" id="btnSave" class="btn btn-primary" value ="Save" />
                 </div>
             </div>
         </fieldset>

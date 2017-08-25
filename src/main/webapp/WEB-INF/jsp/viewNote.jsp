@@ -13,7 +13,7 @@
                     <a href="<c:url value="/notes"/> " class="btn btn-default">
                         <span class="glyphicon-hand-left glyphicon"></span> Back
                     </a>
-                    <a href="<c:url value="/notes/editNote?id=${note.noteId}"/> " class="btn btn-warning">
+                    <a href="<c:url value="/editNote?id=${note.noteId}"/> " class="btn btn-warning">
                         <span class="glyphicon-edit glyphicon"></span> Edit
                     </a>
                     <a href="<c:url value="/delete?id=${note.noteId}"/> " class="btn btn-danger">

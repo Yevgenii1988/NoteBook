@@ -34,8 +34,8 @@ public class NotesServiceImpl implements NotesService {
     }
 
     @Override
-    public void updateNote(Note note) {
-        notesRepository.updateNote(note);
+    public void updateNote(int noteId, Note note) {
+        notesRepository.updateNote(noteId, note);
     }
 
     @Override

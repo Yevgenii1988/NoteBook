@@ -44,15 +44,15 @@ public class NoteController {
         return "redirect:/notes";
     }
 
-    @RequestMapping(value = "/notes/editNote", method = RequestMethod.GET)
+    @RequestMapping(value = "/editNote", method = RequestMethod.GET)
     public String getEditNoteForm(@RequestParam("id") int noteId, Model model) {
         model.addAttribute("noteToBeUpdated", notesService.getNoteById(noteId));
         return "editForm";
     }
 
-    @RequestMapping(value = "/notes/updateNote", method = RequestMethod.POST)
-    public String editNote(@ModelAttribute("noteToBeUpdated") Note noteToBeUpdated) {
-        notesService.updateNote(noteToBeUpdated);
+    @RequestMapping(value = "/editNote", method = RequestMethod.POST)
+    public String editNote(@RequestParam("id") int noteId, @ModelAttribute("noteToBeUpdated") Note noteToBeUpdated, Model model) {
+        notesService.updateNote(noteId, noteToBeUpdated);
         return "redirect:/notes";
     }
 
