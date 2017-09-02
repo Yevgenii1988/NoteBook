@@ -71,6 +71,15 @@ public class NotesRepositoryImpl implements NotesRepository {
         jdbcTemplate.update(sql, params);
     }
 
+    @Override
+    public List<Note> searchByKeyword(String keyword) {
+        String sql = "SELECT * FROM NOTES WHERE TITLE LIKE :keyword OR BODY LIKE :keyword";
+        Map<String, Object> params = new HashMap<>();
+        params.put("keyword", "%" + keyword + "%");
+
+        return jdbcTemplate.query(sql, params, new NoteMapper());
+    }
+
     private static final class NoteMapper implements RowMapper<Note> {
 
         @Override

@@ -4,3 +4,4 @@
 
 <li><a href="<c:url value="/notes"/> ">All Notes</a> </li>
 <li><a href="<c:url value="/notes/add"/> ">Add Note</a> </li>
+<li><a href="<c:url value="/notes/search"/> ">Search</a> </li>

@@ -42,4 +42,9 @@ public class NotesServiceImpl implements NotesService {
     public void deleteNote(Note note) {
         notesRepository.deleteNote(note);
     }
+
+    @Override
+    public List<Note> searchByKeyword(String keyword) {
+        return notesRepository.searchByKeyword(keyword);
+    }
 }

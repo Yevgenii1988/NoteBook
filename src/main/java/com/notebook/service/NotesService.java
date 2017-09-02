@@ -11,4 +11,5 @@ public interface NotesService {
     void addNote(Note note);
     void updateNote(int noteId, Note note);
     void deleteNote(Note note);
+    List<Note> searchByKeyword(String keyword);
 }
