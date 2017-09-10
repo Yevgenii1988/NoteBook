@@ -10,9 +10,6 @@
                 ${note.body}<br/>
                 <br/>
                 <p>
-                    <a href="<c:url value="/notes"/> " class="btn btn-default">
-                        <span class="glyphicon-hand-left glyphicon"></span> Back
-                    </a>
                     <a href="<c:url value="/editNote?id=${note.noteId}"/> " class="btn btn-warning">
                         <span class="glyphicon-edit glyphicon"></span> Edit
                     </a>
