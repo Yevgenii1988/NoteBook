@@ -63,18 +63,4 @@ public class NoteController {
         notesService.deleteNote(noteToDelete);
         return "redirect:/notes";
     }
-
-    @RequestMapping(value = "/notes/search", method = RequestMethod.GET)
-    public String getSearchForm(Model model) {
-        SearchEngine searchEngine = new SearchEngine();
-        model.addAttribute("searchEngine", searchEngine);
-        return "searchForm";
-    }
-
-    @RequestMapping(value = "/notes/search", method = RequestMethod.POST)
-    public String search(@ModelAttribute("searchEngine") SearchEngine searchEngine, Model model) {
-        String keyword = searchEngine.getKeyword();
-        model.addAttribute("notes", notesService.searchByKeyword(keyword));
-        return "notes";
-    }
 }
