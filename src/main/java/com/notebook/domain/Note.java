@@ -1,14 +1,23 @@
 package com.notebook.domain;
 
-import java.io.Serializable;
+import javax.persistence.*;
 
-public class Note implements Serializable {
+@Entity
+@Table(name = "NOTES")
+public class Note {
 
-    private static final long serialVersionUID = 1L;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private int noteId;
+
+    @Column(name = "TITLE")
     private String title;
+
+    @Column(name = "CATEGORY")
     private String category;
+
+    @Column(name = "BODY")
     private String body;
 
     public int getNoteId() {

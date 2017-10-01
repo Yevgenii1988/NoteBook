@@ -52,7 +52,7 @@ public class RootApplicationConfig {
         Map<String, String> properties = new HashMap<>();
         properties.put("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
         properties.put("hibernate.hbm2ddl.auto", "create-drop");
-        properties.put("hibernate.hbm2ddl.import_files", "sql/create-database.sql,sql/insert-data.sql");
+        properties.put("hibernate.hbm2ddl.import_files", "sql//insert-data.sql");
         properties.put("hibernate.show_sql", "true");
         properties.put("hibernate.format_sql", "true");
         return properties;
